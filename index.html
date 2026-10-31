@@ -163,6 +163,12 @@ main h1{letter-spacing:-1px}
 .pcard:hover{--bs:215%;border-color:var(--acc);transform:translateY(-4px)}
 .company .roles div{border-left-color:var(--acc);text-shadow:0 1px 8px rgba(0,0,0,.6)}
 .pcard p,.company h3,.pcard h3{text-shadow:0 1px 10px rgba(0,0,0,.55)}
+/* skills boxes: dot grid background */
+#skills .card{position:relative;overflow:hidden;background-color:var(--card);background-image:radial-gradient(rgba(110,231,183,.35) 1px,transparent 1.5px);background-size:16px 16px;transition:border-color .3s,transform .3s}
+#skills .card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 100%,transparent 0,var(--card) 75%);pointer-events:none}
+#skills .card>*{position:relative}
+#skills .card:hover{border-color:var(--acc);transform:translateY(-4px)}
+#skills .tags span{background:rgba(15,42,34,.55)}
 </style>
 </head>
 <body>
