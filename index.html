@@ -138,6 +138,9 @@ td.g{background:rgba(110,231,183,.12);color:var(--acc2);font-weight:500}
 /* case study pop-up: background artwork (assets/Case Study BG.jpeg) */
 .paper .mb{position:relative;isolation:isolate}
 .paper .mb::before{content:"";display:block;position:sticky;top:0;z-index:-1;height:90vh;margin:-36px -40px calc(36px - 90vh);pointer-events:none;background:linear-gradient(90deg,rgba(244,242,236,.5) 0%,rgba(244,242,236,.3) 50%,rgba(244,242,236,.15) 100%),url("assets/Case%20Study%20BG.jpeg") center/cover no-repeat}
+/* key achievements cards: lavender and mint frosted glass */
+.achc{background:linear-gradient(135deg,rgba(185,168,240,.32),rgba(110,231,183,.22) 70%,rgba(255,255,255,.06)),rgba(15,42,34,.55);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 20px 50px rgba(91,79,196,.2)}
+.achc .m{color:#fff}
 @media(max-width:900px){.paper .mb::before{margin:-24px -20px calc(24px - 90vh)}.cs-row{grid-template-columns:1fr}.cs-row .cs{padding:28px}}
 :root{--serif:'Instrument Serif',Georgia,serif}
 main h1,main h2,main h3,dialog:not(.paper) h2,dialog:not(.paper) h3{font-family:var(--serif);font-weight:400}
