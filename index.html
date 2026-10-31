@@ -134,7 +134,10 @@ td.g{background:rgba(110,231,183,.12);color:var(--acc2);font-weight:500}
 .paper .btn.solid{background:#B9A8F0;border-color:#B9A8F0;color:#15141A}
 .paper .btn.solid:hover{background:#15141A;border-color:#15141A;color:#fff}
 .paper .mb h3{border-top-color:rgba(21,20,26,.1)}
-@media(max-width:900px){.cs-row{grid-template-columns:1fr}.cs-row .cs{padding:28px}}
+/* case study pop-up: background artwork (assets/Case Study BG.jpeg) */
+.paper .mb{position:relative;isolation:isolate}
+.paper .mb::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:0;height:900px;pointer-events:none;background:linear-gradient(90deg,rgba(244,242,236,.88) 0%,rgba(244,242,236,.55) 45%,rgba(244,242,236,0) 75%),linear-gradient(to bottom,rgba(244,242,236,0) 72%,#F4F2EC 100%),url("assets/Case%20Study%20BG.jpeg") center top/cover no-repeat}
+@media(max-width:900px){.paper .mb::before{height:640px}.cs-row{grid-template-columns:1fr}.cs-row .cs{padding:28px}}
 :root{--serif:'Instrument Serif',Georgia,serif}
 main h1,main h2,main h3,dialog:not(.paper) h2,dialog:not(.paper) h3{font-family:var(--serif);font-weight:400}
 main h1{letter-spacing:-1px}
