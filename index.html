@@ -141,10 +141,6 @@ td.g{background:rgba(110,231,183,.12);color:var(--acc2);font-weight:500}
 /* key achievements cards: lavender and mint frosted glass */
 .achc{background:linear-gradient(135deg,rgba(185,168,240,.32),rgba(110,231,183,.22) 70%,rgba(255,255,255,.06)),rgba(15,42,34,.55);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 20px 50px rgba(91,79,196,.2)}
 .achc .m{color:#fff}
-/* certifications: aurora glass (E) with badge ripple rings (H) */
-.cert{background:radial-gradient(circle at 43px 50%,transparent 0 26px,rgba(255,255,255,.34) 27px 28px,transparent 29px 40px,rgba(255,255,255,.22) 41px 42px,transparent 43px 56px,rgba(255,255,255,.12) 57px 58px,transparent 59px),linear-gradient(110deg,rgba(110,231,183,.32),rgba(80,170,210,.22) 45%,rgba(185,168,240,.32)),rgba(15,42,34,.6);border-color:rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 14px 34px rgba(0,0,0,.25)}
-.cert i{background:#fff;color:#0B6B4D;box-shadow:0 0 18px rgba(110,231,183,.55)}
-.cert small{color:#CFE3DA}
 @media(max-width:900px){.paper .mb::before{margin:-24px -20px calc(24px - 90vh)}.cs-row{grid-template-columns:1fr}.cs-row .cs{padding:28px}}
 :root{--serif:'Instrument Serif',Georgia,serif}
 main h1,main h2,main h3,dialog:not(.paper) h2,dialog:not(.paper) h3{font-family:var(--serif);font-weight:400}
@@ -160,6 +156,13 @@ main h1{letter-spacing:-1px}
 .light .cert i{background:var(--deep);color:#fff}
 @media(max-width:900px){nav{display:none}.top .wrap{justify-content:flex-end}.hero{grid-template-columns:1fr}h1{font-size:7vw}.orbit{max-width:360px}.chip{font-size:11.5px;padding:6px 10px}.chip.st{padding:7px 10px}.chip.st strong{font-size:18px}.chip.st span{font-size:10.5px}.ach,.two{grid-template-columns:1fr}.srow{grid-template-columns:1fr;gap:10px}.achc{flex-direction:column;gap:8px}.mb{padding:24px 20px}.toc{grid-template-columns:1fr}.cs{padding:28px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+/* experience boxes: network-mesh photo under a green veil */
+.company,.pcard{background:linear-gradient(115deg,rgba(15,42,34,.9),rgba(15,42,34,.6) 55%,rgba(15,42,34,.82)),url("assets/exp_BG.jpeg") var(--bp,50% 40%)/var(--bs,cover) no-repeat;border-color:rgba(110,231,183,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 44px rgba(0,0,0,.35);transition:background-size .8s ease,border-color .3s,transform .3s}
+.pcard{--bs:190%}
+.pcard:nth-child(1){--bp:15% 30%}.pcard:nth-child(2){--bp:85% 70%}
+.pcard:hover{--bs:215%;border-color:var(--acc);transform:translateY(-4px)}
+.company .roles div{border-left-color:var(--acc);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.pcard p,.company h3,.pcard h3{text-shadow:0 1px 10px rgba(0,0,0,.55)}
 </style>
 </head>
 <body>
