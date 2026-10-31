@@ -241,7 +241,7 @@ main h1{letter-spacing:-1px}
 <span class="cs-label">Case study 1</span>
 <h2>Catching defects before they multiply</h2>
 <p>A concept case study. Our line supervisors get alerted about quality defects AFTER they've already produced 200 bad units. By then, it's too late.</p>
-<p style="color:var(--mute);font-size:14px">Figures are illustrative.</p>
+
 <button class="btn solid" id="csbtn">View case study</button>
 </div>
 <div class="cs-row">
@@ -340,7 +340,7 @@ const stg=[['Stage 1: Capture','s',['1|System, inspector|Unit reaches checkpoint
 const steps=h=>'<div class="scroll"><table><tr><th>#</th><th>Who</th><th>Action</th><th>Output</th></tr>'+stg.map(g=>'<tr class="sh '+g[1]+'"><td colspan="4">'+g[0]+'</td></tr>'+g[2].map(r=>'<tr>'+r.split('|').map(c=>'<td>'+c+'</td>').join('')+'</tr>').join('')).join('')+'</table></div>';
 const pill=v=>'<span class="pill '+v[0]+'">'+v+'</span>';
 function cs(){
- return '<div class="bar"><i style="background:#a32d2d"></i><i style="background:#8a5a00"></i><i style="background:#1f7a63"></i><i style="background:#5b4fc4"></i></div><h2>Catching defects before they multiply</h2><p style="font-size:18px">A business analyst case study, shown as diagrams</p><div class="quote2">Our line supervisors get alerted about quality defects AFTER they\'ve already produced 200 bad units. By then, it\'s too late.</div><p class="legend">Concept case study. Figures marked as assumed are illustrative and would be checked against plant data in a real engagement.</p>'+
+ return '<div class="bar"><i style="background:#a32d2d"></i><i style="background:#8a5a00"></i><i style="background:#1f7a63"></i><i style="background:#5b4fc4"></i></div><h2>Catching defects before they multiply</h2><p style="font-size:18px">A business analyst case study, shown as diagrams</p><div class="quote2">Our line supervisors get alerted about quality defects AFTER they\'ve already produced 200 bad units. By then, it\'s too late.</div>'+
  '<div class="toc"><span>The problem</span><span>Alert levels and containment</span><span>Stakeholders and RACI</span><span>Four swimlane diagrams</span><span>My approach</span><span>The 28 steps</span><span>Today and target</span><span>User stories and UAT plan</span><span>The eight-stage flow</span><span>Rollout and results</span></div>'+
  sec('The problem: four delays behind 200 bad units','The delays add up to about 20 minutes. At 10 units a minute, that is 200 bad units. The target is 2 minutes.')+
  flow([['Detection lag','Late batch check'],['Logging lag','Paper or Excel'],['Comms lag','Phone or radio'],['Decision lag','No stop rule']],['r','r','r','r']).replace(/→/g,'+')+
@@ -369,14 +369,14 @@ function cs(){
  '<h4>Stories 2 to 4 checks</h4>'+tbl(['#','Given','When','Then'],[['2','A critical breach','Alert is raised','All units since last good check tagged suspect'],['3','A limit change request','It is submitted','Live only after QA approval; versions kept'],['4','Sensor out of calibration','Data arrives','Flagged invalid; switch to manual inspection']])+
  sec('UAT plan: 12 scenarios','Grouped by what each scenario tests: alert path, people and rules, failure cases.')+tbl(['#','Scenario','Expected result'],[['1','Normal within-limit data','Logged, no alert'],['2','Warning-level drift','Soft notice, line continues'],['3','Critical breach','Alert in 60 seconds, timer starts'],['4','No acknowledgment','Escalates at 5 and 10 minutes'],['5','Stop-line defect','Line held; restart blocked until QA clears'],['6','Close without root cause','System blocks closure'],['7','Sensor fault','Fault alert; manual fallback'],['8','Network outage, then recovery','Buffered data back-filled, none lost'],['9','Shift handover with open alert','Alert transfers with acknowledgment'],['10','Override or snooze','Reason required, logged, time-limited'],['11','Limit change','Needs QA approval; version logged'],['12','Audit log check','Every event traceable end to end']])+
  sec('Rollout: start with one line','Each phase moves on only when its exit check is met. The pilot starts in shadow mode.')+flow([['Prepare','Agree baseline'],['Pilot','One line, 6-8 weeks'],['Expand','Similar lines'],['Scale','Whole plant']],['p','s','s','s'])+'<h4>Move on when</h4>'+flow([['Sign-off done',''],['False alarms under 10%',''],['Results hold',''],['Held one quarter','']],['y','y','y','y'])+
- sec('Target results (assumed)','Figures are illustrative and would be validated against plant data.')+'<div class="nums"><div><b>About 200 → under 20</b><span>Units made before detection: about 200 today, under 20 target</span></div><div><b>About $312K → $31K</b><span>Scrap loss per year: about $312K today, about $31K target</span></div><div><b>About $280K a year avoided</b><span>Scrap only, before rework and returns</span></div></div>';
+ sec('Target results (assumed)')+'<div class="nums"><div><b>About 200 → under 20</b><span>Units made before detection: about 200 today, under 20 target</span></div><div><b>About $312K → $31K</b><span>Scrap loss per year: about $312K today, about $31K target</span></div><div><b>About $280K a year avoided</b><span>Scrap only, before rework and returns</span></div></div>';
 }
 $('#csbtn').onclick=()=>open(cs(),'paper');
 const BAR='<div class="bar"><i style="background:#a32d2d"></i><i style="background:#8a5a00"></i><i style="background:#1f7a63"></i><i style="background:#5b4fc4"></i></div>';
 const T=(h,r)=>tbl(h,r.map(x=>x.split('|')));
 const R5=(h,r)=>tbl(h,r.map(x=>x.split('|').map((c,i)=>i&&c!=='-'?pill(c):c)));
 const N=a=>'<div class="nums">'+a.map(x=>'<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+'</div>';
-const hd=(t,s,q)=>BAR+'<h2>'+t+'</h2><p style="font-size:18px">'+s+'</p><div class="quote2">'+q+'</div><p class="legend">Concept case study. Figures marked as assumed are illustrative and would be validated with real data.</p>';
+const hd=(t,s,q)=>BAR+'<h2>'+t+'</h2><p style="font-size:18px">'+s+'</p><div class="quote2">'+q+'</div>';
 const pdf=f=>'<p style="margin-top:40px"><a class="btn solid" href="assets/'+f+'" target="_blank" rel="noopener">Open the full PDF with all diagrams</a></p>';
 const F4=['p','p','p','p'];
 function cs2(){
