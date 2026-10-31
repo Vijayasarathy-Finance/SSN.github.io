@@ -169,6 +169,11 @@ main h1{letter-spacing:-1px}
 #skills .card>*{position:relative}
 #skills .card:hover{border-color:var(--acc);transform:translateY(-4px)}
 #skills .tags span{background:rgba(15,42,34,.55)}
+/* case study boxes: hexagon background */
+#case-study .cs{position:relative;overflow:hidden;background-color:var(--card);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cg fill='none' stroke='%236EE7B7' stroke-opacity='.22'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34'/%3E%3C/g%3E%3C/svg%3E");background-size:42px 75px;transition:border-color .3s,transform .3s}
+#case-study .cs::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(21,59,48,0) 15%,var(--card) 92%);pointer-events:none}
+#case-study .cs>*{position:relative}
+#case-study .cs:hover{border-color:var(--acc);transform:translateY(-4px)}
 </style>
 </head>
 <body>
